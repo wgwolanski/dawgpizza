@@ -1,8 +1,8 @@
-/* Google web fonts 'Open Sans' (italic and normal) and 'Boogaloo' */
+/* Fonts from google fonts. Both 'Open Sans' (Normal and Italic) and 'Nunito' (Normal and bold) */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700);
 @import url(http://fonts.googleapis.com/css?family=Nunito:400,700);
 
-/* reset CSS file to reset browser default styling to a consistent starting point */
+/* CSS Reset file to clear browser-specific formatting settings. */
 @import url(reset.css);
 
 body {
@@ -16,6 +16,9 @@ body {
 
 p {
 	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
 	text-align: center;
 }
 
@@ -46,7 +49,7 @@ header h2 {
 
 nav ul {
 	background-color: #656F8C;
-
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -72,16 +75,29 @@ nav a:hover {
 	border-radius: 5px;
 }
 
+dl {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%
+}
+
 dl dt {
 	font-size: 20px;
+	font-weight: bold;
 	padding: 10px;
 	color: #413659;
+}
+
+ul {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }
 
 .content-box {
 	width: 60%;
 	background-color: #F2EFDF;
-	margin: 0 left;
+	margin: 0 auto;
 	box-shadow: 2px 2px 6px #9BBFAB;
 	border-radius: 5px;
 }
@@ -91,13 +107,6 @@ dl dt {
 	width: 180px;
 	height: auto;
 	padding-right: 15px;
-}
-
-.foot {
-	border-style:solid;
-	border-bottom:thick double #ff0000;
-	width:  95%;
-	margin: 0 auto;
 }
 
 .inline-image {
