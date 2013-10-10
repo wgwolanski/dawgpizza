@@ -1,6 +1,6 @@
 /* Google web fonts 'Open Sans' (italic and normal) and 'Boogaloo' */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700);
-@import url(http://fonts.googleapis.com/css?family=Boogaloo);
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,700);
 
 /* reset CSS file to reset browser default styling to a consistent starting point */
 @import url(reset.css);
@@ -16,6 +16,7 @@ body {
 
 p {
 	padding: 10px;
+	margin: 0 auto;
 }
 
 header {
@@ -23,6 +24,7 @@ header {
 }
 
 header h1 {
+	font-family: 'Nunito', sans-serif;
 	font-size: 40px;
 	font-weight: bold;
 	color: #413659;
@@ -63,7 +65,7 @@ nav a:hover {
 }
 
 .content-box {
-	width: 80%;
+	width: 60%;
 	background-color: #F2EFDF;
 	margin: 0 left;
 	box-shadow: 2px 2px 6px #9BBFAB;
@@ -75,4 +77,11 @@ nav a:hover {
 	height: 140px;
 	width: auto;
 	padding-right: 15px;
+}
+
+.section {
+	border-style:solid;
+	border-bottom:thick-double #000;
+	width:  95%;
+	margin: 0 auto;
 }
