@@ -16,7 +16,14 @@ body {
 
 p {
 	padding: 10px;
-	margin: 0 auto;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	color: #413659;
+	font-size: 28px;
+
 }
 
 header {
@@ -33,6 +40,7 @@ header h1 {
 
 header h2 {
 	font-style: italic;
+	font-size: 18px;
 
 }
 
@@ -64,6 +72,12 @@ nav a:hover {
 	border-radius: 5px;
 }
 
+dl dt {
+	font-size: 20px;
+	padding: 10px;
+	color: #413659;
+}
+
 .content-box {
 	width: 60%;
 	background-color: #F2EFDF;
@@ -74,14 +88,22 @@ nav a:hover {
 
 .logo {
 	float: left;
-	height: 140px;
-	width: auto;
+	width: 180px;
+	height: auto;
 	padding-right: 15px;
 }
 
-.section {
+.foot {
 	border-style:solid;
-	border-bottom:thick-double #000;
+	border-bottom:thick double #ff0000;
 	width:  95%;
 	margin: 0 auto;
+}
+
+.inline-image {
+	max-width: 90%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
 }
