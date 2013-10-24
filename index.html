@@ -3,14 +3,20 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-responsive.css" rel="stylesheet">
 		<title>Dawg Pizza</title>
 		<meta name="author" content="wolanwg">
+
+		<!-- hot link to Bootstrap stylesheet -->
+	    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+	    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 	</head>
 
 	<body>
-		<div class="content-box">
+		<div class="container">
 
 			<header>
 				<a href="index.html"><img class="logo" src="img/logo.png"></a>
@@ -28,26 +34,37 @@
 
 			</header>
 
-			<h2>Business Hours</h2>
-			
-			<p>10:00am to 11:00pm, Monday through Saturday.</p><br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<h2>Business Hours</h2>
+					<p>10:00am to 11:00pm, Monday through Saturday.</p>
 
-			<h2>Contact Us</h2>
-			<dl style="text-align:center">
-				<dt>Phone Number</dt>
-				<dd>206-555-1212</dd>
-				<dt>Address</dt>
-				<dd><a href="http://maps.google.com/?q=4306 University Way NE, Seattle, WA 98105">4306 University Way NE, Seattle, WA 98105</a></dd>
-				<dt>Email</dt>
-				<dd><a href="mailto:dawgpizzaseattle@gmail.com">dawgpizzaseattle@gmail.com</a></dd>
-				<dt>Twitter</dt>
-				<dd><a href="https://twitter.com/DawgPizzaSea">@DawgPizzaSea</a></dd>
+					<h2>Contact Us</h2>
+					<dl style="text-align:center">
+						<dt>Phone Number</dt>
+						<dd>206-555-1212</dd>
+						<dt>Address</dt>
+						<dd><a href="http://maps.google.com/?q=4306 University Way NE, Seattle, WA 98105">4306 University Way NE, Seattle, WA 98105</a></dd>
+						<dt>Email</dt>
+						<dd><a href="mailto:dawgpizzaseattle@gmail.com">dawgpizzaseattle@gmail.com</a></dd>
+						<dt>Twitter</dt>
+						<dd><a href="https://twitter.com/DawgPizzaSea">@DawgPizzaSea</a></dd>
 
-			</dl>
-
+					</dl>
+				</div>
+				<div class="col-md-6">
+					<h2 class="iframe-title">Our Process</h2>
+					<iframe width="420" height="315" src="http://www.youtube.com/embed/HWL__9yDu8I" frameborder="0" allowfullscreen>
+					</iframe>
+				</div>
+			</div> <!-- Row -->
 			<img class="inline-image" src="img/pizza1.jpg">
 
-		</div>
+		</div> <!-- Container -->
+
+		<!-- hot links to Bootstrap JavaScript and jQuery (required by Bootstrap) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 	</body>
 </html>
