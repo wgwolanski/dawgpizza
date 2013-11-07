@@ -28,6 +28,13 @@ h2 {
 
 }
 
+h3 {
+	text-align: center;
+	color: #413659;
+	font-size: 22px;
+
+}
+
 /*header {
 	padding: 15px;
 }*/
@@ -86,7 +93,8 @@ ul {
 	display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px;
+    border: 5px solid #333;
+    box-shadow: 3px 3px 2px #777;
 }
 
 .iframe-title {
@@ -101,3 +109,35 @@ ul {
 	text-align: left;
 }
 
+.if-narrow-logo {
+	width: 100%;
+	display: none;
+}
+
+.template {
+	display: none;
+}
+
+@media screen and (max-width: 730px) {
+	.logo {
+		width: 100%;
+		display: none;
+	}
+
+	.if-narrow {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 730px) {
+	.if-narrow-logo {
+		display: inline;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.if-foot-narrow {
+		display: none;
+	}
+}

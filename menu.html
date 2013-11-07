@@ -20,7 +20,7 @@
 
 			<header>
 				<a href="index.html"><img class="logo" src="img/logo.png" alt="Our Logo"></a>
-				<h2>Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!</h2>
+				<h2 class="if-narrow">Awesome wood-fired pizza with fresh ingredients baked to order. <br>Come in and eat, or call us for delivery!</h2>
 
 
         		<div class="navbar navbar-inverse">
@@ -41,6 +41,8 @@
 			        </div>
 			    </div>
 
+			    <a href="index.html"><img class="if-narrow-logo" src="img/logo.png" alt="Our Logo"></a>
+
 			</header>
 
 			<h2>Our Menu</h2>
@@ -54,63 +56,43 @@
 
 			<p style="font-weight:bold;font-size:22px">All pizzas can be customized--add a few ingredients, or take a few off--for an extra $2.</p>
 
-			<div class="row">
-				<div class="col-md-6">
-					<h2>Meat Pies</h2>
+			<div class="pizza-menu"></div>
+            <h2>Drinks</h2>
+			<div class="drink-menu"></div>
+            <h2>Desserts</h2>
+			<div class="dessert-menu"></div>
 
-					<dl>
-						<dt>Classic Pepperoni</dt>
-						<dd>Pepperoni and Mozzarella on our Spicy Tomato Sauce. $10/$13/$16</dd>
-						<dt>The Hawaiian</dt>
-						<dd>Canadian Bacon and Pineapple with Mozzarella on a rich Tomato Sauce.  $12/$14/$17</dd>
-						<dt>Duck, Duck, Goose</dt>
-						<dd>Roasted Duck and Goose with Bacon, Chestnuts on a rich Plum Sauce.  $15/$17/$19</dd>
-						<dt>The Bambi</dt>
-						<dd>Slow-cooked Venison with Red Cabbage on our famous Black Cherry Sauce.  $15/$17/$19</dd>
-						<dt>The Ultimate</dt>
-						<dd>Pepperoni, Bacon, Canadian Bacon, Chicken, Duck, Goose, and Ground Beef with Smoked Mozzarella on our Spicy Tomato Sauce. Add Venison or Elk for an extra $2!  $15/$19/$23</dd>
-					</dl><br>
-				</div>
-				<div class="col-md-6">
-					<h2>Vegetarian Pies</h2>
+            <!-- template card for each entry
+             this will not be displayed, only used by code -->
+            <div class="template pizza-template">
+                <div class="details">
+                    <h3 class="pizza-name"></h3>
+                    <p><span class="pizza-desc"></span>. $<span class="cost-one"></span>/$<span class="cost-two"></span>/$<span class="cost-three"></span></p>
+                    <!-- <p>$<span class="cost-one"></span>/$<span class="cost-two"></span>/$<span class="cost-three"></span></p> -->
+                </div>
+            </div>
 
-					<dl>
-						<dt>Margherita</dt>
-						<dd>Mozzarella, Basil, Salt on an Olive Oil Base.  $10/$13/$16</dd>
-						<dt>Veggie Madness</dt>
-						<dd>Mushroom, Black Olive, Onions, Roasted Garlic, Squash and Roasted Eggplant on our Spicy Tomato Sauce.  $11/$14/$17</dd>
-						<dt>Forest Floor</dt>
-						<dd>Three kinds of mushrooms with Mozzarella on a herb Tomato Sauce.  $11/$14/$17</dd>
-						<dt>Mr Green</dt>
-						<dd>Roasted Chicken with Romano on a Basil Pesto sauce. $13/$16/$19</dd>
-						<dt>Purple Monster</dt>
-						<dd>Roasted Eggplant and Cabbage stir fried in sesame oil on a rich Plum Sauce.  $11/$14/$17</dd>
-					</dl><br>
-				</div>
 
-			</div> <!-- Row -->
+            <div class="template drink-template">
+                <div class="details">
+                    <p><span class="drink-name"></span> <span class="drink-cost"></span>$</p>
 
-			<h2>Drinks</h2>
+                </div>
+            </div>
 
-			<ul>
-				<li>Coke, Diet Coke, Sprite, Root Beer, or Irn Bru by the can ($4)</li>
-				<li>Rainier Beer by the can ($4)</li>
-				<li>House Red Wine by the glass or bottle ($10/$40)</li>
-			</ul><br>
 
-			<h2>Dessert</h2>
-
-			<ul>
-				<li>Chocolate Gelato ($8)</li>
-				<li>Lemon Sorbet ($7)</li>
-				<li>Ricotta Cheese Cake ($10)</li>
-			</ul><br>
+            <div class="template dessert-template">
+                <div class="details">
+                    <p><span class="dessert-name"></span> <span class="dessert-cost"></span>$</p>
+                </div>
+            </div>
 
 			<img class="inline-image" src="img/pizza-order.jpg" alt="Our order counter">
+			<br><br><br>
 
 		</div>
 
-		<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="navbar navbar-default navbar-fixed-bottom if-foot-narrow">
 			<div class="container container-white">
 				<p class="foot-text navbar-text">Copyright DawgPizza Corp. Call us for delivery: 206-555-1212</p>
 				<a href="https://twitter.com/DawgPizzaSea" class="twitter-follow-button navbar-text pull-right" data-show-count="false" data-size="large">Follow @DawgPizzaSea</a>
@@ -122,6 +104,12 @@
 		<!-- hot links to Bootstrap JavaScript and jQuery (required by Bootstrap) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+		<!-- direct link to menu script -->
+		<script src="http://www.dawgpizza.com/orders/menu.js"></script>
+		<!-- my own JavaScript file, which will use the menu data structure
+		    (replace file name with the name of your script file) -->
+		<script src="orders/pizza-scripts.js"></script>
 
 	</body>
 </html>
