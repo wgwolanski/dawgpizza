@@ -11,8 +11,11 @@ $(function(){
     var cart = {
         name: null,
         address1: null,
+        address2: null,
         zip: null,
         phone: null,
+        nextUrl: null,
+        nextCaption: null,
         items: [] //empty array
     }; //cart data
 
@@ -41,25 +44,31 @@ $(function(){
         renderCart(cart, $('.cart-container'));
     });
 
-    $('.remove-btn').click(function(){
-        //use the attributes on the button to construct
-        //a new cart item object that we can add to the
-        //cart's items array
-        var idxToRemove = this.getAttribute('data-index');
-    	cart.items.splice(idxToRemove, 1);
-
-
-        renderCart(cart, $('.cart-container'));
-    });
 
     $('.place-order').click(function(){
         
-        //TODO: validate the cart to make sure all the required
+        //validate the cart to make sure all the required
         //properties have been filled out, and that the 
-        //total order is greater than $20 (see homework 
-        //instructions) 
+        //total order is greater than $20
+    	cart.name = $(".form-name").val();
+        cart.address1 = $(".form-line1").val();
+        cart.address2 = $(".form-line2").val();
+        cart.zip = $(".form-zip").val();
+        cart.phone = $(".form-phone").val();
+        cart.nextUrl = "http://students.washington.edu/wolanwg/info343/dawgpizza/index.html";
+        cart.nextCaption = "Back to our Homepage";
 
-        postCart(cart, $('.cart-form'));
+        if (parseInt(getTotal(cart.items)) > 20) {
+        	postCart(cart, $('.cart-form'));
+        } else {
+        	alert("Your order must be over $20!");
+        }
+        
+    });
+
+    $('.clear-cart').click(function(){
+    	cart.items = [];
+    	renderCart(cart, $('.cart-container'));
     });
 
 }); //doc ready
@@ -165,6 +174,7 @@ function renderCart(cart, container) {
         item = cart.items[idx];
         instance = template.clone();
         instance.find('.item-name').html(item.name);
+        instance.find('.item-size').html(item.size);
         instance.find('.item-cost').html(item.price);
         instance.find('.remove-btn').attr('data-index', idx);
         totalPrice += parseInt(item.price);
@@ -172,19 +182,18 @@ function renderCart(cart, container) {
         instance.removeClass('template');
         instance.removeClass('cart-item-template');
         container.append(instance);
-        //TODO: code to render the cart item
+
 
 
     } //for each cart item
-    $('.total-price').html("$" + totalPrice + " +$" + (totalPrice * 0.095).toFixed(2) + "(tax) = " + (totalPrice * 1.095).toFixed(2));
-    //TODO: code to render sub-total price of the cart
-    //the tax amount (see instructions), 
+    $('.total-price').html("Total: $" + totalPrice + " +$" + (totalPrice * 0.095).toFixed(2) + " tax = $" + (totalPrice * 1.095).toFixed(2));
+    //sub-total price of the cart
+    //the tax amount, 
     //and the grand total
 
     $('.remove-btn').click(function(){
-        //use the attributes on the button to construct
-        //a new cart item object that we can add to the
-        //cart's items array
+        //Remove given entry from cart, then re-render
+
         var idxToRemove = this.getAttribute('data-index');
     	cart.items.splice(idxToRemove, 1);
 
@@ -210,3 +219,12 @@ function postCart(cart, cartForm) {
     cartForm.submit();
 
 } //postCart()
+
+function getTotal(itemList) {
+	var currTotal = 0;
+	var idx;
+	for (idx=0; idx < itemList.length; ++idx) {
+		currTotal += parseInt(itemList[idx].price);
+	}
+	return currTotal;
+}
