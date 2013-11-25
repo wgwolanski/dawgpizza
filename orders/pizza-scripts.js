@@ -12,7 +12,7 @@ $(function(){
     //     sortBtn.siblings().removeClass("active");
     // });
 
-	pizzaLoop();
+	pizzaMenuLoop();
 	drinkLoop();
 	dessertLoop();
 
@@ -21,7 +21,7 @@ $(function(){
 
 }); // document ready
 
-function pizzaLoop() {
+function pizzaMenuLoop() {
     var template = $('.pizza-template');
     var container = $('.pizza-menu');
     var instance;

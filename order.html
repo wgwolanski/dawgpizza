@@ -35,8 +35,8 @@
 			            <ul class="nav navbar-nav">
 				            <li><a href="index.html">Home</a></li>
 				            <li><a href="about.html">About</a></li>
-				            <li class="active"><a href="menu.html">Menu</a></li>
-				            <li><a href="order.html">Order</a></li>
+				            <li><a href="menu.html">Menu</a></li>
+				            <li class="active"><a href="order.html">Order</a></li>
 				            <li><a href="jobs.html">Jobs</a></li>
 			            </ul>
 			        </div>
@@ -46,52 +46,98 @@
 
 			</header>
 
-			<h2>Our Menu</h2>
-			<p>All our pizzas are made with hand-thrown thin crust, baked in real wood ovens. Choose from one of these sizes:</p>
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Pizzas</h2>
+					<div class="pizza-order-menu"></div>
+					<div class="row">
+						<div class="col-md-6">
+			            	<h2>Drinks</h2>
+							<div class="drink-order-menu"></div>
+						</div>
+						<div class="col-md-6">
+				            <h2>Desserts</h2>
+							<div class="dessert-order-menu"></div>
+						</div>
+					</div>
+		        </div> <!-- col-md-8 -->
 
-			<ul>
-				<li>Small (12")</li>
-				<li>Medium (14")</li>
-				<li>Large (17")</li>
-			</ul><br>
+		        <div class="col-md-4">
+		        	<h2>Your Cart</h2>
+		        	<div class="cart-container"></div>
 
-			<p style="font-weight:bold;font-size:22px">All pizzas can be customized--add a few ingredients, or take a few off--for an extra $2.</p>
 
-			<div class="pizza-menu"></div>
-            <h2>Drinks</h2>
-			<div class="drink-menu"></div>
-            <h2>Desserts</h2>
-			<div class="dessert-menu"></div>
+		        	
+		        	<div class="cart-footer">
+                        <div class="row total-row">
+                            <div class="col-xs-10">
+                                Total:
+                            </div>
+                            <div class="col-xs-2">
+                                $<span class="total-price"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 button-row">
+                                <button type="button" class="btn btn-primary place-final-order">Place My Order</button>
+                            </div>
+                        </div>                        
+                    </div>
 
-            <!-- template card for each entry
+		        	</div>
+		        </div>
+		    </div> <!-- row -->
+
+			<!-- template card for each entry
              this will not be displayed, only used by code -->
-            <div class="template pizza-template">
+            <div class="template pizza-order-template">
                 <div class="details">
                     <h3 class="pizza-name"></h3>
-                    <p><span class="pizza-desc"></span>. $<span class="cost-one"></span>/$<span class="cost-two"></span>/$<span class="cost-three"></span></p>
+                    <p>
+	                    <span class="pizza-desc"></span>.<br>
+	                    
+	                    <button class="btn-name btn-add-small add-to-cart" type="button" data-type="pizza" data-size="small">Add Small to Cart $<span class="cost-one"></button>
+	                    <button class="btn-name btn-add-medium add-to-cart" type="button" data-type="pizza" data-size="medium">Add Medium to Cart $<span class="cost-two"></button>
+	                    <button class="btn-name btn-add-large add-to-cart" type="button" data-type="pizza" data-size="large">Add Large to Cart $<span class="cost-three"></button>
+                	</p>
                     <!-- <p>$<span class="cost-one"></span>/$<span class="cost-two"></span>/$<span class="cost-three"></span></p> -->
                 </div>
-            </div>
+        	</div>
 
 
-            <div class="template drink-template">
+            <div class="template drink-order-template">
                 <div class="details">
-                    <p><span class="drink-name"></span> <span class="drink-cost"></span>$</p>
+                    <p>
+                    	<span class="drink-name"></span><br>
+                    	<button class="btn-add-drink add-to-cart" type="button" data-type="drink">Add to Cart $<span class="drink-cost"></button>
+                    </p>
 
                 </div>
             </div>
 
 
-            <div class="template dessert-template">
+            <div class="template dessert-order-template">
                 <div class="details">
-                    <p><span class="dessert-name"></span> <span class="dessert-cost"></span>$</p>
+                    <p>
+                    	<span class="dessert-name"></span><br>
+                    	<button class="btn-add-dessert add-to-cart" type="button" data-type="drink">Add to Cart $<span class="dessert-cost"></button>
+                    </p>
                 </div>
             </div>
 
-			<img class="inline-image" src="img/pizza-order.jpg" alt="Our order counter">
+            <div class="template cart-item-template">
+            	<div class="details">
+            		<p>
+            			<span class="item-name"></span> $<span class="item-cost"></span>
+            			<button type="button" class="btn btn-danger remove-btn">Remove</button>
+            		</p>
+            	</div>
+            </div>
+
+
+
 			<br><br><br>
-
-		</div>
+		</div> <!-- Container -->
 
 		<div class="navbar navbar-default navbar-fixed-bottom if-foot-narrow">
 			<div class="container container-white">
@@ -111,6 +157,7 @@
 		<!-- my own JavaScript file, which will use the menu data structure
 		    (replace file name with the name of your script file) -->
 		<script src="orders/pizza-scripts.js"></script>
+		<script src="orders/orders.js"></script>
 
 	</body>
 </html>
