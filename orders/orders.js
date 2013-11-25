@@ -28,7 +28,7 @@ $(function(){
             size: this.getAttribute('data-size'),
             price: this.getAttribute('data-price')
         };
-        totalPrice += newCartItem.price;
+
 
         //push the new item on to the items array
         cart.items.push(newCartItem);
@@ -38,6 +38,15 @@ $(function(){
         //note that you would need a <div> or some
         //other grouping element on the page that has a
         //style class of 'cart-container'
+        renderCart(cart, $('.cart-container'));
+    });
+
+    $('.remove-btn').click(function(){
+
+        var idxToRemove = this.getAttribute('data-index');
+    	cart.items.splice(idxToRemove, 1);
+
+
         renderCart(cart, $('.cart-container'));
     });
 
@@ -144,8 +153,10 @@ function dessertOrderLoop() {
 function renderCart(cart, container) {
 	var template = $('.cart-item-template');
     var idx, item;
+    totalPrice = 0;
     //empty the container of whatever is there currently
     container.empty();
+
 
     //for each item in the cart...
     for (idx = 0; idx < cart.items.length; ++idx) {
@@ -154,15 +165,16 @@ function renderCart(cart, container) {
         instance.find('.item-name').html(item.name);
         instance.find('.item-cost').html(item.price);
         instance.find('.remove-btn').attr('data-index', idx);
-
+        totalPrice += parseInt(item.price);
 
         instance.removeClass('template');
+        instance.removeClass('cart-item-template');
         container.append(instance);
         //TODO: code to render the cart item
 
 
     } //for each cart item
-
+    $('.total-price').html("$" + totalPrice + " +$" + (totalPrice * 0.095).toFixed(2) + "(tax) = " + (totalPrice * 1.095).toFixed(2));
     //TODO: code to render sub-total price of the cart
     //the tax amount (see instructions), 
     //and the grand total
