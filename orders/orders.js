@@ -42,7 +42,9 @@ $(function(){
     });
 
     $('.remove-btn').click(function(){
-
+        //use the attributes on the button to construct
+        //a new cart item object that we can add to the
+        //cart's items array
         var idxToRemove = this.getAttribute('data-index');
     	cart.items.splice(idxToRemove, 1);
 
@@ -178,6 +180,17 @@ function renderCart(cart, container) {
     //TODO: code to render sub-total price of the cart
     //the tax amount (see instructions), 
     //and the grand total
+
+    $('.remove-btn').click(function(){
+        //use the attributes on the button to construct
+        //a new cart item object that we can add to the
+        //cart's items array
+        var idxToRemove = this.getAttribute('data-index');
+    	cart.items.splice(idxToRemove, 1);
+
+
+        renderCart(cart, $('.cart-container'));
+    });
 
 } //renderCart()
 
